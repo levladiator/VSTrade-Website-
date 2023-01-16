@@ -1,0 +1,44 @@
+input { 
+    border: none;
+    margin: 4px;
+    margin-left: 0;
+
+    padding: 3px;
+}
+
+input:focus, input:hover{
+    background-color: rgb(183, 171, 171);
+    outline: none;
+}
+
+select {
+    border: none;
+    margin: 5px;
+    margin-left: 0;
+    outline: none;
+
+    padding: 2px;
+}
+
+button{
+    background-color:rgb(183, 43, 226);
+    cursor: pointer;
+    width: 120px;
+    height: 25px;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    background-image: url(../images/register-background.webp);
+    background-size: cover;
+    color:#dab8f9;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: auto;
+}
+
