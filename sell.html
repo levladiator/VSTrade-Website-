@@ -5,28 +5,33 @@
         <title>
             Sell your products
         </title>
-        <link rel="stylesheet" href="styles/buy.css" >
+        <link rel="stylesheet" href="styles/sell.css">
     </head>
     <body>
-        <h1>
+        <div id="top-bar-menu">
+            <a href = "index.html" >
+                <img src = "images/site_logo.png" alt="Site logo" width="125px">  
+            </a>
+            <input type="text" placeholder="Search..">
+        </div>
+        <!--<h1>
             <a href = "index.html" >
                 <img src = "images/site_logo.png" alt="Site logo" width="125px">  
             </a>
             Add a product to sell!
-        </h1>
+        </h1>-->
 
         <nav>
-            <div class="flex-container">
-
-                <a href ="index.html">
-                    <div class = "menu-button">
+            <div id="navigation-menu">
+                
+                <a href="index.html">
+                    <div class="menu-button">
                         Home
                     </div>
                 </a>
-                
-                <a href="sign_in.html">
+                <a href="login.html">
                     <div class="menu-button">
-                        Sign in
+                        Login
                     </div>
                 </a>
                 <a href="register.html">
@@ -44,14 +49,15 @@
                         Sell
                     </div>
                 </a>
-                <a href="shopping_cart.html" style="display: contents;"> 
+                <a href="cart.html" style="display: contents;"> 
                     <div id="shopping-cart">
-                        <img style="border-radius: 35px;" src="images/shopping-cart.jpg" width="50px"> 
+                        <img id="shopping-cart-img" src="images/shopping-cart.jpg"> 
                     </div>
                 </a>
             </div>
         </nav>
-
+        
+        
         <div class="footer">
             <p>VSTrade While using VSTrade, you agree to have read and accepted our terms of use, cookie and privacy policy.</p>
 
