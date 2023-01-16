@@ -13,7 +13,6 @@ a {
 
 .flex-container{
     display: flex;
-    /*height: fit-content;*/
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: end;
@@ -31,10 +30,6 @@ a {
     width: 15%;
     background-color: rgb(59,128,59);
     padding : 0.5%;
-}
-
-.price {
-    padding : 0;
 }
 
 .menu-button {
@@ -79,9 +74,9 @@ a {
     height : auto;
     text-align: center;
     background-color: #759d6a;
+    padding-bottom: 3px;
+    padding-top : 3px;
     color:#4d4c4de7;
-    padding: 2px;
-    
 }
 
 input { 
@@ -103,6 +98,6 @@ input {
     color:aqua;
 }
 .contact {
-
+    padding-top: 5px;
     margin: auto;
 }
