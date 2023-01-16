@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="styles/buy.css" >
     </head>
     <body>
-        <h1>
+        <h1 style = "display:flex">
             <a href = "index.html" >
                 <img src = "images/site_logo.png" alt="Site logo" width="125px">  
             </a>
@@ -18,16 +18,21 @@
         </h1>
 
         <nav>
-            <div id="navigation-menu">
+            <div class="flex-container">
                 
-                <a href="index.html">
-                    <div class="menu-button">
+                <div class="child1">
+                Buy a product!
+                </div>
+
+                <a href ="index.html">
+                    <div class = "menu-button">
                         Home
                     </div>
                 </a>
+                
                 <a href="login.html">
                     <div class="menu-button">
-                        Login
+                        Sign in
                     </div>
                 </a>
                 <a href="register.html">
@@ -45,42 +50,54 @@
                         Sell
                     </div>
                 </a>
-                <a href="cart.html" style="display: contents;"> 
+                <a href="shopping_cart.html" style="display: contents;"> 
                     <div id="shopping-cart">
-                        <img id="shopping-cart-img" src="images/shopping-cart.jpg"> 
+                        <img style="border-radius: 35px;" src="images/shopping-cart.jpg" width="50px"> 
                     </div>
                 </a>
             </div>
         </nav>
         
         <div class ="filter">
-            <div class = "price">
-                <h2 id="section"> Price </h2>
+            
+            <div>
+                <h2 id= "section"> Price </h2>
+
                 <p> Min. price: 
                     <input type="number">
-
                 </p>
+
                 <p> Max. price: 
                     <input type="number">
-                </p>
+                </p>        
 
+            </div>
 
-                
+            <div>
+
+                <h2 id = "section"> Minimum Rating </h2> 
+                <div class = "5starRating">
+                    <input type="checkbox">
+                    <div class="four-pointed-star" ></div>
+                </div>
+
             </div>
 
             <button type = "submit">
                 Search
             </button>
         </div>
+
         <div class="footer">
-            <p>
                 VSTrade is a platform where you can place items for sale or find something to buy, using a filter to narrow down your choices.
                 While using VSTrade, you agree to have read and accepted our terms of use, cookie and privacy policy.
-            </p>
+            
             <div class ="contact">
-
+                    Contact : + 31 6 123 132 33 <br>
+                    Address : Van Mourik Broekmanweg 5, 2628 XE Delft
             </div>
 
         </div>
+
     </body>
 </html>
