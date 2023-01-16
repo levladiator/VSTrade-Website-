@@ -11,89 +11,8 @@ a {
     color:rgb(255, 255, 255);
 }
 
-#top-bar-menu{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#top-bar-menu input{
-    margin-left: 30px;
-    width: 500px;
-    height: 30px;
-
-    border-radius: 15px;
-    border-color: rgb(140, 0, 255);
-    border-style:solid;
-    border-width: 1px;
-    
-}
-#top-bar-menu input:hover{
-    background-color: rgb(183, 171, 171);
-    outline: none;
-}
-
-#top-bar-menu input:focus{
-    background-color: rgb(114, 225, 17);
-    outline: none;
-}
-
-#navigation-menu{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* position: sticky; */
-
-    height: 45px;
-
-    background-image: linear-gradient(to right, rgba(150, 17, 227, 0.8), rgba(37, 200, 137, 0.8));
-
-    border-radius: 32px;
-    padding-left: 5px;
-}
-
-.menu-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 30px;
-
-    font-size: 18px;
-
-    width: 100px;
-    height: 35px;
-
-    transition-duration: 0.5s;
-}
-
-.menu-button:hover{
-    background-color: rgba(45, 195, 120, 0.6);
-    box-shadow: 0px 0px 12px rgb(143, 25, 186);
-
-    font-size: 20px;
-}
-
-#shopping-cart{
-    display: flex;
-    margin-left: auto;
-
-    border-radius: 100%;
-}
-
-#shopping-cart:hover{
-    background-color: rgb(143, 25, 186); 
-    box-shadow: 0px 0px 12px rgb(143, 25, 186);
-}
-
-#shopping-cart-img{
-    width: 55px;
-    border-radius: 100%;
-}
-
 .flex-container{
     display: flex;
-    /*height: fit-content;*/
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: end;
@@ -111,10 +30,6 @@ a {
     width: 15%;
     background-color: rgb(59,128,59);
     padding : 0.5%;
-}
-
-.price {
-    padding : 0;
 }
 
 .menu-button {
@@ -137,16 +52,31 @@ a {
     box-shadow: 0px 0px 12px rgb(143, 25, 186);
 }
 
+#shopping-cart{
+    display: flex;
+
+
+    border-radius: 30px;
+    border-style: outset;
+    background-color: rgb(15, 136, 6);
+}
+
+#shopping-cart:hover{
+    background-color: rgb(143, 25, 186); 
+    box-shadow: 0px 0px 12px rgb(143, 25, 186);
+}
+
 .footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
-    height : 13%;
+    height : auto;
     text-align: center;
     background-color: #759d6a;
+    padding-bottom: 3px;
+    padding-top : 3px;
     color:#4d4c4de7;
-    
 }
 
 input { 
@@ -166,4 +96,8 @@ input {
     text-align: left;
     left : 2%;
     color:aqua;
+}
+.contact {
+    padding-top: 5px;
+    margin: auto;
 }
