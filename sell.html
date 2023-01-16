@@ -3,9 +3,9 @@
     <head>
         <link rel="icon" href ="images/site_logo.png" >
         <title>
-            Sell your products
+            Sell a product
         </title>
-        <link rel="stylesheet" href="styles/sell.css">
+        <link rel="stylesheet" href="styles/sell.css" >
     </head>
     <body>
         <div id="top-bar-menu">
@@ -14,13 +14,7 @@
             </a>
             <input type="text" placeholder="Search..">
         </div>
-        <!--<h1>
-            <a href = "index.html" >
-                <img src = "images/site_logo.png" alt="Site logo" width="125px">  
-            </a>
-            Add a product to sell!
-        </h1>-->
-
+        
         <nav>
             <div id="navigation-menu">
                 
@@ -29,6 +23,7 @@
                         Home
                     </div>
                 </a>
+
                 <a href="login.html">
                     <div class="menu-button">
                         Login
@@ -57,10 +52,75 @@
             </div>
         </nav>
         
+        <div class="flex-container">
+
+            <div class="register-field">
+                Title of the product:
+            </div>
+            <input type="text">
+            <div class="register-field">
+                Description:
+            </div>
+            <input type="text">
+            
+
+            <div class="register-field">
+                Quantity:
+            </div>
+            <input type="number">
+
+            <div class="register-field">
+                Price:
+            </div>
+            <input type="number">
+
+            <button type="submit" style="margin-top: 5px;">Add photos</button>
+
+            <div>Category:</div>
+            <select class="custom-select">
+                <option value="1">Books</option>
+                <option value="2">Films</option>
+            </select>
+
+            <div>Country:</div>
+            <select class="custom-select">
+                <option value="0">Netherlands</option>
+                <option value="1">Burundi</option>
+            </select>
+
+            <div class="register-field">
+                <span style="color:rgb(255, 0, 0)">*</span>
+                Email: 
+            </div>
+            <input type="email">
+            <div class="register-field">
+                <span style="color:rgb(255, 0, 0)">*</span>
+                Password: 
+            </div>
+            <input type="password"> 
+            <div class="register-field">
+                <span style="color:rgb(255, 0, 0)">*</span>
+                Repeat password: 
+            </div>
+            <input type="password"> 
         
-        <div class="footer">
-            <p>VSTrade While using VSTrade, you agree to have read and accepted our terms of use, cookie and privacy policy.</p>
+            <div>
+                By placing an item on sale you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
+            </div>
+
+            <button type="submit">Post</button>
 
         </div>
+
+        <footer>
+            <p>
+                VSTrade is a platform where you can place items for sale or find something to buy, using a filter to narrow down your choices.
+                While using VSTrade, you agree to have read and accepted our terms of use, cookie and privacy policy.
+            </p>
+            <div class ="contact">
+                Contact : + 31 6 123 132 33 <br>
+                Address : Van Mourik Broekmanweg 5, 2628 XE Delft
+            </div>
+        <footer>
     </body>
 </html>

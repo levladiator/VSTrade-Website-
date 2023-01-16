@@ -8,15 +8,13 @@
         <link rel="stylesheet" href="styles/buy.css" >
     </head>
     <body>
-        <h1>
+        <div id="top-bar-menu">
             <a href = "index.html" >
                 <img src = "images/site_logo.png" alt="Site logo" width="125px">  
             </a>
-            <div style = "text-align: center;">
-               VSTrade 
-            </div>
-        </h1>
-
+            <input type="text" placeholder="Search..">
+        </div>
+        
         <nav>
             <div id="navigation-menu">
                 
@@ -25,6 +23,7 @@
                         Home
                     </div>
                 </a>
+
                 <a href="login.html">
                     <div class="menu-button">
                         Login
@@ -54,19 +53,68 @@
         </nav>
         
         <div class ="filter">
-            <div class = "price">
-                <h2 id="section"> Price </h2>
+            
+            <div>
+                <h2 id= "section"> Price </h2>
+
                 <p> Min. price: 
                     <input type="number">
-
                 </p>
+
                 <p> Max. price: 
                     <input type="number">
+                </p>        
+
+            </div>
+
+            <div>
+
+                <h2 id = "section"> Minimum Rating </h2> 
+                <p class = "ratings">
+                    <input type="checkbox">
+                    5 stars
+                </p>
+
+                <p class = "ratings">
+                    <input type="checkbox">
+                    4 stars
+                </p>
+
+                <p class = "ratings">
+                    <input type="checkbox">
+                    3 stars
+                </p>
+
+                <p class = "ratings">
+                    <input type="checkbox">
+                    2 stars
+                </p>
+
+                <p class = "ratings">
+                    <input type="checkbox">
+                    1 star
                 </p>
                 
             </div>
 
-            <button type = "submit">
+            <div>
+
+                <h2 id = "section"> Categories </h2> 
+                <p class = "ratings">
+                    <input type="checkbox">
+                    books
+                </p>
+
+                <p class = "ratings">
+                    <input type="checkbox">
+                    movies
+                </p>
+                
+            </div>
+
+
+
+            <button type = "submit" style="margin-top: 5px;">
                 Search
             </button>
         </div>
