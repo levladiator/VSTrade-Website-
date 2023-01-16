@@ -4,7 +4,6 @@ body {
     background-size: cover;
     margin-left: 3%;
     margin-right: 3%;
-    
 }
 
 a {
@@ -12,14 +11,45 @@ a {
     color:rgb(255, 255, 255);
 }
 
-.flex-container{
+#top-bar-menu{
     display: flex;
-    height: fit-content;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: end;
     align-items: center;
-    height: fit-content;
+}
+
+#top-bar-menu input{
+    margin-left: 30px;
+    width: 500px;
+    height: 30px;
+
+    border-radius: 15px;
+    border-color: rgb(140, 0, 255);
+    border-style:solid;
+    border-width: 1px;
+    
+}
+#top-bar-menu input:hover{
+    background-color: rgb(183, 171, 171);
+    outline: none;
+}
+
+#top-bar-menu input:focus{
+    background-color: rgb(114, 225, 17);
+    outline: none;
+}
+
+#navigation-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* position: sticky; */
+
+    height: 45px;
+
+    background-image: linear-gradient(to right, rgba(150, 17, 227, 0.8), rgba(37, 200, 137, 0.8));
+
+    border-radius: 32px;
+    padding-left: 5px;
 }
 
 .menu-button {
@@ -28,31 +58,36 @@ a {
     align-items: center;
 
     border-radius: 30px;
-    border-style: outset;
+
+    font-size: 18px;
+
+    width: 100px;
+    height: 35px;
+
+    transition-duration: 0.5s;
+}
+
+.menu-button:hover{
+    background-color: rgba(45, 195, 120, 0.6);
+    box-shadow: 0px 0px 12px rgb(143, 25, 186);
 
     font-size: 20px;
-    width: 100px;
-    height: 40px;
-
-    background-color: rgb(15, 136, 6);
-    transition-duration: 0.3s;
-}
-.menu-button:hover{
-    background-color: rgb(143, 25, 186); 
-    box-shadow: 0px 0px 12px rgb(143, 25, 186);
 }
 
 #shopping-cart{
     display: flex;
+    margin-left: auto;
 
-
-    border-radius: 30px;
-    border-style: outset;
-    background-color: rgb(15, 136, 6);
+    border-radius: 100%;
 }
 
 #shopping-cart:hover{
     background-color: rgb(143, 25, 186); 
     box-shadow: 0px 0px 12px rgb(143, 25, 186);
+}
+
+#shopping-cart-img{
+    width: 55px;
+    border-radius: 100%;
 }
 
