@@ -1,17 +1,4 @@
-input { 
-    border: none;
-    margin: 4px;
-    margin-left: 0;
-
-    padding: 3px;
-}
-
-input:focus, input:hover{
-    background-color: rgb(183, 171, 171);
-    outline: none;
-}
-
-select {
+.flex-container > select {
     border: none;
     margin: 5px;
     margin-left: 0;
@@ -23,8 +10,10 @@ select {
 button{
     background-color:rgb(183, 43, 226);
     cursor: pointer;
-    width: 120px;
-    height: 25px;
+    width: 130px;
+    height: 30px;
+    font-size: 15px;
+    margin-top: 10px;
 }
 
 body{
@@ -40,5 +29,22 @@ body{
     align-items: center;
 
     margin: auto;
+}
+
+.flex-container > div{
+    margin-top: 3px;
+}
+
+.flex-container > input{
+    border: none;
+    margin: 4px;
+    margin-left: 0;
+
+    padding: 3px;
+}
+
+.flex-container > input:focus, input:hover{
+    background-color: rgb(183, 171, 171);
+    outline: none;
 }
 

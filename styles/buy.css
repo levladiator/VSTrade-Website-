@@ -66,17 +66,9 @@ a {
     box-shadow: 0px 0px 12px rgb(143, 25, 186);
 }
 
-.footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height : auto;
-    text-align: center;
-    background-color: #759d6a;
-    padding-bottom: 3px;
-    padding-top : 3px;
-    color:#4d4c4de7;
+#shopping-cart-img{
+    width: 55px;
+    border-radius: 100%;
 }
 
 input { 
@@ -91,12 +83,22 @@ input {
 .child1 {
     text-align: left;
 }
+
 #section {
 
     text-align: left;
     left : 2%;
     color:aqua;
 }
+
+footer {
+    text-align: center;
+    background-color: #759d6a;
+    padding-bottom: 3px;
+    padding-top : 3px;
+    color:#4d4c4de7;
+}
+
 .contact {
     padding-top: 5px;
     margin: auto;

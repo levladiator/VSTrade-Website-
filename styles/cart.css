@@ -5,3 +5,12 @@ body{
     margin-left: 3%;
     margin-right: 3%;
 }
+
+#check-out-button{
+    position: absolute;
+    background-image: linear-gradient(to right, rgba(252, 237, 28, 0.7), rgba(231, 37, 15, 0.7));
+    
+    margin-left: 70%;
+    width: 130px;
+    height: 50px;
+}
