@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(137, 180, 117);
+    background-color: rgb(161, 192, 146);
     /* background-image: url(../images/register-background.webp); */
     background-size: cover;
     color:#000000;
@@ -31,7 +31,7 @@ body{
     height: 20px;
 }
 
-.flex-container > div > input:focus, input:hover{
+.custom-input:focus, .custom-input:hover{
     background-color: rgb(183, 171, 171);
     outline: none;
 }

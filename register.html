@@ -4,54 +4,70 @@
         <title>Main page!</title>
         <link rel="stylesheet" href="styles/register.css">
         <link rel="icon" href ="images/site_logo2.png" >
+
+        <script src="scripts/register.js"></script>
     </head>
 
     <body>
         <h1>Welcome, stranger!</h1>
-        
-        <div class="flex-container">
+
+        <form name="register-form"  action="successful-register.html" class="flex-container"  onsubmit="return validateForm()">
 
             <div>
-                First name: <br>
-                <input type="text" class="custom-input">
+                <label for="name"> Name: </label><br>
+                <input type="text" id="name" class="custom-input">
+
+                <ul id="name-div" hidden>
+                    <li hidden>
+                        Please enter your full name!
+                    </li>
+                    <li hidden>
+                        Invalid character used!
+                    </li>
+                    <li hidden>
+                        Looks good!
+                    </li>
+                </ul>
             </div>
-            <div >
-                Last name: <br>
-                <input type="text" class="custom-input">
-            </div>
-            <div >
-                User ID: <br>
-                <input type="text" class="custom-input">
-            </div>
+            
             <div>
-                ZIP code: <br>
-                <input type="text" class="custom-input">
+                <labeL for="user-id"> User ID: </labeL><br>
+                <input type="text" id="user-id" class="custom-input">
+
+                <ul id="user-id-div" hidden>
+                    <li id="test" hidden>
+                        Length must be between 5 and 12 characters!
+                    </li>
+                    <li hidden>
+                        First character must be an uppercase letter.
+                    </li>
+                    <li hidden>
+                        Last character must be a special character!
+                    </li>
+                    <li hidden>
+                        Looks good!
+                    </li>
+                </ul>
             </div>
+            
             <div >
                 Email: <br>
                 <input type="email" class="custom-input">
             </div>
+
             <div >
                 Password: <br>
                 <input type="password" class="custom-input"> 
             </div>
+
             <div >
                 Repeat password: <br>
                 <input type="password" class="custom-input"> 
             </div>
 
             <div>
-                Gender: <br>
-                <select class="custom-gender" class="custom-select">
-                    <option value="0"></option>
-                    <option value="1">M</option>
-                    <option value="2">F</option>
-                </select>
-            </div>
-
-            <div>
                 Country: <br>
-                <select class="custom-country" class="custom-select">
+                <select class="custom-country custom-select">
                     <option value="0"></option>
                     <option value="1">Netherlands</option>
                     <option value="2">Burundi</option>
@@ -59,20 +75,44 @@
             </div>
 
             <div>
-                About you: <br>
-                <input type="text" class="custom-input" placeholder="Max. 100 words" style="text-align: center;">
+                Language: <br>
+                <select class="custom-language custom-select">
+                    <option value="0"></option>
+                    <option value="1">Netherlands</option>
+                    <option value="2">Burundi</option>
+                </select>
             </div>
 
+            <div >
+                Address: <br>
+                <input type="text" class="custom-input"> 
+            </div>
+
+            <div>
+                ZIP code: <br>
+                <input type="text" class="custom-input">
+            </div>
+
+            <div>
+                Sex: <br>
+                <select class="custom-gender custom-select">
+                    <option value="0"></option>
+                    <option value="1">M</option>
+                    <option value="2">F</option>
+                </select>
+            </div>
+
+            <div>
+                About you: <br>
+                <textarea class="custom-input" placeholder="Max. 100 words" style="text-align: center;"></textarea>
             <div>
                 <input type="checkbox" class="custom-checkbox"> 
                 By creating an account you agree to our <a href="#" style="color:dodgerblue;">Terms & Privacy</a>.
             </div>
             
-            <div>
-                <button type="submit">
-                    Register
-                </button>
-            </div>
-        </div>
+            <button type="submit">
+                Register
+            </button>
+        </form>
     </body>
 </html>
