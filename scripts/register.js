@@ -1,81 +1,245 @@
 const specialCharsAndNumbers = "^[^<>{}\"/|;:.,~!?@#$%^=&*\\]\\\\()\\[¿§«»ω⊙¤°℃℉€¥£¢¡®©0-9_+]*$";
 const englishAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+const digits = "0123456789";
+const englishAlphabetUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function validateForm() {
     var valid = true;
-    if(!validateUserId()) valid = false;
     if(!validateName()) valid = false;
-
-    return valid;
-}
-
-function validateUserId() {
-    let val = document.forms["register-form"]["user-id"].value;
-    let ul = document.getElementById("user-id-div");
-
-    var valid = true;
-
-    for(var i = 0; i < ul.children.length; i++) {
-        ul.children[i].hidden = true;
-        ul.children[i].style.color = "rgb(162, 26, 26)";
-    }
-
-    if(val.length < 5 || val.length > 12) {
-        ul.hidden = false;
-        ul.children[0].hidden = false;
-        valid = false;
-    }
-
-    if(val.length == 0 || val.charAt(0) != val.charAt(0).toUpperCase()) {
-        ul.hidden = false;
-        ul.children[1].hidden = false;
-        valid = false;
-    }
-
-    if(val.length == 0 || specialCharsAndNumbers.search(val.charAt(val.length - 1)) == -1) {
-        ul.hidden = false;
-        ul.children[2].hidden = false;
-        valid = false;
-    }
-    
-    if(valid == true) {
-        ul.hidden = false;
-        ul.children[3].hidden = false;
-        ul.children[3].style.color = "green";
-    }
+    if(!validateUserId()) valid = false;
+    if(!validateEmail()) valid = false;
+    if(!validateZipcode()) valid = false;
+    if(!validateCountry()) valid = false;
+    if(!validateLanguage()) valid = false;
+    if(!validateSex()) valid = false;
 
     return valid;
 }
 
 function validateName() {
-    let val = document.forms["register-form"]["name"].value;
+    let input = document.forms["register-form"]["name"];
+    let val = input.value;
     let ul = document.getElementById("name-div");
 
     var valid = true;
 
     for(var i = 0; i < ul.children.length; i++) {
         ul.children[i].hidden = true;
-        ul.children[i].style.color = "rgb(162, 26, 26)";
     }
 
     if(val.length == 0) {
-        ul.hidden = false;
         ul.children[0].hidden = false;
         valid = false;
     }
     for(var i = 0; i < val.length; i++)  {
         if(englishAlphabet.search(val.charAt(i)) == -1) {
-            ul.hidden = false;
             ul.children[1].hidden = false;
             valid = false;
             break;
         }
     }
+
+    ul.hidden = false;
     
     if(valid == true) {
-        ul.hidden = false;
         ul.children[2].hidden = false;
-        ul.children[2].style.color = "green";
+        input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+    } else {
+        input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
+    }
+
+    return valid;
+}
+
+function validateUserId() {
+    let input = document.forms["register-form"]["user-id"];
+    let val = input.value;
+    let ul = document.getElementById("user-id-div");
+
+    var valid = true;
+
+    for(var i = 0; i < ul.children.length; i++) {
+        ul.children[i].hidden = true;
+    }
+
+    if(val.length < 5 || val.length > 12) {
+        ul.children[0].hidden = false;
+        valid = false;
+    }
+
+    if(val.length == 0 || val.charAt(0) != val.charAt(0).toUpperCase()) {
+        ul.children[1].hidden = false;
+        valid = false;
+    }
+
+    if(val.length == 0 || specialCharsAndNumbers.search(val.charAt(val.length - 1)) == -1) {
+        ul.children[2].hidden = false;
+        valid = false;
+    }
+
+    ul.hidden = false;
+    
+    if(valid == true) {
+        ul.children[3].hidden = false;
+        input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+    } else {
+        input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
+    }
+
+    return valid;
+}
+
+function validateEmail() {
+    let input = document.forms["register-form"]["email"];
+    let val = input.value;
+    let ul = document.getElementById("email-div");
+
+    var valid = true;
+
+    for(var i = 0; i < ul.children.length; i++) {
+        ul.children[i].hidden = true;
+    }
+
+    if(val.length == 0) {
+        valid = false;
+    }
+
+    ul.hidden = false;
+
+    if(valid == false) {
+        ul.children[0].hidden = false;
+        input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
+
+    } else {
+        ul.children[1].hidden = false;
+        input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+    }
+
+    return valid;
+}
+
+function validateCountry() {
+    let input = document.forms["register-form"]["country"];
+    let val = input.value;
+    let ul = document.getElementById("country-div");
+
+    var valid = true;
+
+    ul.hidden = true;
+
+    for(var i = 0; i < ul.children.length; i++) {
+        ul.children[i].hidden = true;
+    }
+
+    if(val == 0) {
+        valid = false;
+    }
+
+    if(valid == false) {
+        ul.hidden = false;
+        ul.children[0].hidden = false;
+        input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
+
+    } else {
+        input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+    }
+
+    return valid;
+}
+
+function validateLanguage() {
+    let input = document.forms["register-form"]["language"];
+    let val = input.value;
+    let ul = document.getElementById("language-div");
+
+    var valid = true;
+
+    ul.hidden = true;
+
+    for(var i = 0; i < ul.children.length; i++) {
+        ul.children[i].hidden = true;
+    }
+
+    if(val == 0) {
+        valid = false;
+    }
+
+    if(valid == false) {
+        ul.hidden = false;
+        ul.children[0].hidden = false;
+        input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
+
+    } else {
+        input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+    }
+
+    return valid;
+}
+
+function validateSex() {
+    let input = document.forms["register-form"]["sex"]
+    let val = input.value;
+    let ul = document.getElementById("sex-div");
+
+    var valid = true;
+
+    ul.hidden = true;
+
+    for(var i = 0; i < ul.children.length; i++) {
+        ul.children[i].hidden = true;
+    }
+
+    if(val == 0) {
+        valid = false;
+    }
+
+    if(valid == false) {
+        ul.hidden = false;
+        ul.children[0].hidden = false;
+        input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
+
+    } else {
+        input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+    }
+
+    return valid;
+}
+
+function validateZipcode() {
+    let input = document.forms["register-form"]["zipcode"];
+    let val = input.value;
+    let ul = document.getElementById("zipcode-div");
+
+    var valid = true;
+
+    for(var i = 0; i < ul.children.length; i++) {
+        ul.children[i].hidden = true;
+    }
+
+    if(val.length != 6) {
+        valid = false;
+    } else {
+        for(var i = 0; i < 4; i++)  {
+            if(digits.search(val.charAt(i)) == -1) {
+                valid = false;
+                break;
+            }
+        }
+        if(englishAlphabetUppercase.search(val.charAt(4)) == -1 ||
+        englishAlphabetUppercase.search(val.charAt(5)) == -1) {
+            valid = false;
+        }
+    }
+
+    ul.hidden = false;
+
+    if(valid == true) {
+        ul.children[1].hidden = false;
+        input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+    } else {
+        ul.children[0].hidden = false;
+        input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
+
     }
 
     return valid;

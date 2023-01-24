@@ -24,7 +24,7 @@
                     <li hidden>
                         Invalid character used!
                     </li>
-                    <li hidden>
+                    <li hidden style="color: rgb(14, 125, 14);">
                         Looks good!
                     </li>
                 </ul>
@@ -35,7 +35,7 @@
                 <input type="text" id="user-id" class="custom-input">
 
                 <ul id="user-id-div" hidden>
-                    <li id="test" hidden>
+                    <li hidden>
                         Length must be between 5 and 12 characters!
                     </li>
                     <li hidden>
@@ -44,75 +44,121 @@
                     <li hidden>
                         Last character must be a special character!
                     </li>
-                    <li hidden>
+                    <li hidden style="color: rgb(14, 125, 14);">
                         Looks good!
                     </li>
                 </ul>
             </div>
             
             <div >
-                Email: <br>
-                <input type="email" class="custom-input">
+                <label for="email">Email: </label><br>
+                <input id="email" type="email" class="custom-input">
+
+                <ul id="email-div" hidden>
+                    <li hidden>
+                        Enter an email!
+                    </li>
+                    <li hidden style="color: rgb(14, 125, 14);">
+                        Looks good!
+                    </li>
+                </ul>
             </div>
 
             <div >
-                Password: <br>
-                <input type="password" class="custom-input"> 
-            </div>
-
-            <div >
-                Repeat password: <br>
-                <input type="password" class="custom-input"> 
+                <label for="password">Password:</label><br>
+                <input id="password" type="password" class="custom-input"> 
+            
+                <ul id="password-div" hidden>
+                    <li hidden>
+                        Enter an email!
+                    </li>
+                    <li hidden style="color: rgb(14, 125, 14);">
+                        Looks good!
+                    </li>
+                </ul>
             </div>
 
             <div>
-                Country: <br>
-                <select class="custom-country custom-select">
-                    <option value="0"></option>
+                <label for="country">Country: </label><br>
+                <select id="country" class="custom-country custom-select">
+                    <option value="0">Choose..</option>
                     <option value="1">Netherlands</option>
                     <option value="2">Burundi</option>
                 </select>
+
+                <ul id="country-div" hidden>
+                    <li hidden>
+                        Select a country!
+                    </li>
+                </ul>
             </div>
 
             <div>
-                Language: <br>
-                <select class="custom-language custom-select">
-                    <option value="0"></option>
+                <label for="language">Language: </label><br>
+                <select id="language" class="custom-language custom-select">
+                    <option value="0">Choose..</option>
                     <option value="1">Netherlands</option>
                     <option value="2">Burundi</option>
                 </select>
-            </div>
 
-            <div >
-                Address: <br>
-                <input type="text" class="custom-input"> 
-            </div>
-
-            <div>
-                ZIP code: <br>
-                <input type="text" class="custom-input">
+                <ul id="language-div" hidden>
+                    <li hidden>
+                        Select a language!
+                    </li>
+                </ul>
             </div>
 
             <div>
-                Sex: <br>
-                <select class="custom-gender custom-select">
-                    <option value="0"></option>
+                <label for="sex">Sex: </label><br>
+                <select id="sex" class="custom-gender custom-select">
+                    <option value="0">Choose..</option>
                     <option value="1">M</option>
                     <option value="2">F</option>
                 </select>
+
+                <ul id="sex-div" hidden>
+                    <li hidden>
+                        Select a gender!
+                    </li>
+                </ul>
+            </div>
+
+            <div >
+                <label for="address">Address: </label><br>
+                <input id="address" type="text" class="custom-input"> 
             </div>
 
             <div>
-                About you: <br>
-                <textarea class="custom-input" placeholder="Max. 100 words" style="text-align: center;"></textarea>
+                <label for="zipcode">ZIP code: </label><br>
+                <input type="text" id = "zipcode" class="custom-input">
+
+                <ul id="zipcode-div" hidden>
+                    <li hidden>
+                        Invalid ZIP code!
+                    </li>
+                    <li hidden style="color: rgb(14, 125, 14);">
+                        Looks good!
+                    </li>
+                </ul>
+            </div>
+
             <div>
-                <input type="checkbox" class="custom-checkbox"> 
+                <label for="aboutyou">About you: </label><br>
+                <textarea id="aboutyou" class="custom-input" placeholder="Max. 100 words" style="text-align: center;"></textarea>
+            </div>
+
+            <!-- an empty row to separate T&C + button form the form -->
+            <div class="break"></div> 
+
+            <div>
+                <input id="terms" type="checkbox" class="custom-checkbox"> 
                 By creating an account you agree to our <a href="#" style="color:dodgerblue;">Terms & Privacy</a>.
             </div>
             
             <button type="submit">
                 Register
             </button>
+
         </form>
     </body>
 </html>
