@@ -8,10 +8,10 @@
         <script src="scripts/register.js"></script>
     </head>
 
-    <body>
+    <body onclick="countMouseClicks()" onkeydown="countKeyPresses()">
         <h1>Welcome, stranger!</h1>
 
-        <form name="register-form"  action="index.html" class="flex-container"  onsubmit="return validateForm()">
+        <form name="register-form" class="flex-container"  onsubmit="return validateForm()">
 
             <div>
                 <label for="name"> Name<span style = "color:red">*</span></label><br>
@@ -168,6 +168,13 @@
                 Register
             </button>
 
+            <div id="infoBox" hidden>
+                Number of mouse clicks: <span id="totalMouseClicks"></span><br>
+                Total time spent: <span id="totalTimeSpent"></span><br>
+                Total key presses: <span id="totalKeyPresses"></span><br>
+                Total number of characters typed: <span id="totalCharsTyped"></span><br>
+            </div>
         </form>
+
     </body>
 </html>
