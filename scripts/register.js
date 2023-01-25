@@ -1,18 +1,23 @@
-const specialCharsAndNumbers = "^[^<>{}\"/|;:.,~!?@#$%^=&*\\]\\\\()\\[¿§«»ω⊙¤°℃℉€¥£¢¡®©0-9_+]*$";
+const specialChars = "^[^<>{}\"/|;:.,~!?@#$%^=&*\\]\\\\()\\[¿§«»ω⊙¤°℃℉€¥£¢¡®©_+]*$";
 const englishAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 const digits = "0123456789";
 const englishAlphabetUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
+const englishAlphabetLowercase = "abcdefghijklmnopqrstuvwxyz";
+let alertText = "";
 function validateForm() {
+
     var valid = true;
     if(!validateName()) valid = false;
     if(!validateUserId()) valid = false;
     if(!validateEmail()) valid = false;
-    if(!validateZipcode()) valid = false;
     if(!validateCountry()) valid = false;
     if(!validateLanguage()) valid = false;
     if(!validateSex()) valid = false;
-
+    if(!validateZipcode()) valid = false;
+    if(!validatePassword()) valid = false;
+    if(valid == true)
+        alert(alertText);
+    alertText = "";
     return valid;
 }
 
@@ -22,6 +27,7 @@ function validateName() {
     let ul = document.getElementById("name-div");
 
     var valid = true;
+  
 
     for(var i = 0; i < ul.children.length; i++) {
         ul.children[i].hidden = true;
@@ -44,10 +50,11 @@ function validateName() {
     if(valid == true) {
         ul.children[2].hidden = false;
         input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+        alertText += "Your name: " + val + "\n";
     } else {
         input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
     }
-
+    
     return valid;
 }
 
@@ -72,7 +79,8 @@ function validateUserId() {
         valid = false;
     }
 
-    if(val.length == 0 || specialCharsAndNumbers.search(val.charAt(val.length - 1)) == -1) {
+    if(val.length == 0 || (specialChars.search(val.charAt(val.length - 1)) == -1 && 
+    digits.search(val.charAt(val.length - 1)) == -1)) {
         ul.children[2].hidden = false;
         valid = false;
     }
@@ -82,6 +90,7 @@ function validateUserId() {
     if(valid == true) {
         ul.children[3].hidden = false;
         input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+        alertText += "Your username: " + val + "\n";
     } else {
         input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
     }
@@ -113,6 +122,7 @@ function validateEmail() {
     } else {
         ul.children[1].hidden = false;
         input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+        alertText += "Your email: " + val + "\n";
     }
 
     return valid;
@@ -141,6 +151,7 @@ function validateCountry() {
         input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
 
     } else {
+        alertText += "Your country: " + input.options[val].text + "\n";
         input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
     }
 
@@ -170,6 +181,7 @@ function validateLanguage() {
         input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
 
     } else {
+        alertText += "Your language: " + input.options[val].text + "\n"; 
         input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
     }
 
@@ -199,6 +211,7 @@ function validateSex() {
         input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
 
     } else {
+        alertText += "Your sex: " + input.options[val].text + "\n"; 
         input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
     }
 
@@ -236,11 +249,63 @@ function validateZipcode() {
     if(valid == true) {
         ul.children[1].hidden = false;
         input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+        alertText += "Your Zipcode: " + val + "\n"; 
     } else {
         ul.children[0].hidden = false;
         input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
 
     }
+
+    return valid;
+}
+
+function validatePassword() {
+    let input = document.forms["register-form"]["password"];
+    let pass = input.value;
+    let ul = document.getElementById("password-div");
+    
+    let valid = true;
+    
+    for(var i = 0; i < ul.children.length; i++) {
+        ul.children[i].hidden = true;
+    }
+
+    if(pass.length >= 12){
+        input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+        let okLower = false;
+        let okUpper = false;
+        let okNumber = false;
+        let okSpecial = false;
+        for (let i=0; i<pass.length;i++){
+            if(englishAlphabetLowercase.search(pass.charAt(i))!=-1)
+                okLower = true;
+            if(englishAlphabetUppercase.search(pass.charAt(i))!=-1)
+                okUpper = true;
+            if(digits.search(pass.charAt(i))!=-1)
+                okNumber = true;
+            if(specialChars.search(pass.charAt(i))!=-1)
+                okSpecial = true;
+        }
+        if(okLower == true && okUpper == true && okNumber == true && okSpecial == true){ 
+            input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
+            if(pass.length>=14)
+                ul.children[3].hidden = false;
+            else ul.children[2].hidden = false;
+        }
+        else {
+            valid = false;
+            input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
+            ul.children[1].hidden = false;
+        }
+
+    }
+    else {
+        ul.children[0].hidden = false;
+        input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
+        valid = false;
+    }
+   
+    ul.hidden = false;
 
     return valid;
 }
