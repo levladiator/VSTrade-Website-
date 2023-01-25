@@ -3,21 +3,41 @@ const englishAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 const digits = "0123456789";
 const englishAlphabetUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const englishAlphabetLowercase = "abcdefghijklmnopqrstuvwxyz";
-let alertText = "";
-function validateForm() {
 
+let alertText = "";
+
+let mouseClicks = 0;
+let timeSpent = 0;
+let keyPresses = 0;
+let charsTyped = 0;
+let start = Date.now();
+
+function validateForm() {
     var valid = true;
+
     if(!validateName()) valid = false;
     if(!validateUserId()) valid = false;
     if(!validateEmail()) valid = false;
     if(!validateCountry()) valid = false;
     if(!validateLanguage()) valid = false;
     if(!validateSex()) valid = false;
+    validateAddress();
     if(!validateZipcode()) valid = false;
     if(!validatePassword()) valid = false;
-    if(valid == true)
+    validateBio();
+
+    if(valid == true) {
         alert(alertText);
+    }
+
+    showInfo();
+
     alertText = "";
+    mouseClicks = 0;
+    keyPresses = 0;
+    charsTyped = 0;
+    start = Date.now();
+
     return valid;
 }
 
@@ -27,7 +47,8 @@ function validateName() {
     let ul = document.getElementById("name-div");
 
     var valid = true;
-  
+    
+    charsTyped += val.length;
 
     for(var i = 0; i < ul.children.length; i++) {
         ul.children[i].hidden = true;
@@ -64,6 +85,7 @@ function validateUserId() {
     let ul = document.getElementById("user-id-div");
 
     var valid = true;
+    charsTyped += val.length;
 
     for(var i = 0; i < ul.children.length; i++) {
         ul.children[i].hidden = true;
@@ -104,6 +126,8 @@ function validateEmail() {
     let ul = document.getElementById("email-div");
 
     var valid = true;
+    charsTyped += val.length;
+
 
     for(var i = 0; i < ul.children.length; i++) {
         ul.children[i].hidden = true;
@@ -123,6 +147,7 @@ function validateEmail() {
         ul.children[1].hidden = false;
         input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
         alertText += "Your email: " + val + "\n";
+
     }
 
     return valid;
@@ -224,6 +249,8 @@ function validateZipcode() {
     let ul = document.getElementById("zipcode-div");
 
     var valid = true;
+    charsTyped += val.length;
+
 
     for(var i = 0; i < ul.children.length; i++) {
         ul.children[i].hidden = true;
@@ -250,6 +277,7 @@ function validateZipcode() {
         ul.children[1].hidden = false;
         input.style.backgroundColor = "rgba(122, 240, 87, 0.579)";
         alertText += "Your Zipcode: " + val + "\n"; 
+
     } else {
         ul.children[0].hidden = false;
         input.style.backgroundColor = "rgba(243, 78, 78, 0.579)";
@@ -265,6 +293,8 @@ function validatePassword() {
     let ul = document.getElementById("password-div");
     
     let valid = true;
+    charsTyped += pass.length;
+
     
     for(var i = 0; i < ul.children.length; i++) {
         ul.children[i].hidden = true;
@@ -308,4 +338,50 @@ function validatePassword() {
     ul.hidden = false;
 
     return valid;
+}
+
+function validateAddress() {
+    let input = document.forms["register-form"]["address"];
+    let val = input.value;
+
+    charsTyped += val.length;
+}
+
+function validateBio() {
+    let input = document.forms["register-form"]["aboutyou"];
+    let val = input.value;
+
+    charsTyped += val.length;
+}
+ 
+function countMouseClicks() {
+    mouseClicks ++;
+}
+
+function countKeyPresses() {
+    keyPresses ++;
+}
+
+function startTimer() {
+    start = Date.now();
+}
+
+function countTimeSpent() {
+    var time = (Date.now() - start) / 1000;
+    var ans = "";
+    if(parseInt(time / 60) > 0) ans += parseInt(time / 60) + " minutes and ";
+    ans += parseInt(time % 60) + " seconds";
+    return ans;
+}
+
+function showInfo() {
+    let info = document.getElementById("infoBox");
+
+    document.getElementById("totalMouseClicks").innerHTML = mouseClicks;
+    document.getElementById("totalTimeSpent").innerHTML = countTimeSpent();
+    document.getElementById("totalKeyPresses").innerHTML = keyPresses;
+    document.getElementById("totalCharsTyped").innerHTML = charsTyped;
+
+    info.hidden = false;
+
 }
