@@ -17,6 +17,7 @@ function validateForm() {
     if(!validateSex()) valid = false;
     if(!validateZipcode()) valid = false;
     if(!validatePassword()) valid = false;
+    if(!validateTerms()) valid = false;
 
     if(valid == true) {
         alert(alertText);
@@ -315,4 +316,25 @@ function validatePassword() {
     ul.hidden = false;
 
     return valid;
+}
+
+function validateTerms() {
+    let input = document.forms["register-form"]["terms"];
+    let val = input.checked;
+    let ul = document.getElementById("terms-div");
+
+    let valid = true;
+
+    for(var i = 0; i < ul.children.length; i++) {
+        ul.children[i].hidden = true;
+    }
+
+    if(val == true) {
+        return true;
+    }
+    else {
+        ul.hidden = false;
+        ul.children[0].hidden = false;
+        return false;
+    }
 }
