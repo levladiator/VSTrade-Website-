@@ -3,38 +3,20 @@
     <head>
         <title>Main page!</title>
         <link rel="stylesheet" href="styles/register.css">
-        <script src = "scripts/login.js"></script>
     </head>
 
     <body>
         <h1>Welcome back!</h1>
 
-        <form name = "login-form" action ="index.html" class="flex-container" onsubmit = "return validateForm()">
+        <div class="flex-container">
 
             <div>
-                <label for="email">Email</label><br>
-                <input id = "email" type="email" class="custom-input">
-                <ul id="email-div" hidden>
-                    <li hidden>
-                        You must enter an email!
-                    </li>
-                    <li hidden>
-                        Email does not match any account!
-                    </li>
-                </ul>
+                Email: <br>
+                <input type="email" class="custom-input">
             </div>
             <div>
-                <label for="password">Password</label><br>
-                <input id = "password" type="password" class="custom-input">
-                
-                <ul id = "password-div" hidden>
-                    <li hidden>
-                        You need a password to continue!
-                    </li>
-                    <li hidden>
-                        Password is incorrect!
-                    </li>
-                </ul>
+                Password: <br>
+                <input type="password" class="custom-input">
             </div>
             <div>
                 <input type="checkbox" class="custom-checkbox"> 

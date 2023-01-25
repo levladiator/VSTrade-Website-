@@ -5,7 +5,8 @@
         <link rel="stylesheet" href="styles/register.css">
         <link rel="icon" href ="images/site_logo2.png" >
 
-        <script src="scripts/register.js"></script>
+        <script src="scripts/validateForm.js"></script>
+        <script src="scripts/displayInfo.js"></script>
     </head>
 
     <body onclick="countMouseClicks()" onkeydown="countKeyPresses()">
@@ -164,7 +165,7 @@
                 By creating an account you agree to our <a href="#" style="color:dodgerblue;">Terms & Privacy</a>.
             </div>
             
-            <button type="submit">
+            <button type="submit" onclick="showInfo()">
                 Register
             </button>
 
@@ -174,7 +175,7 @@
                 Total key presses: <span id="totalKeyPresses"></span><br>
                 Total number of characters typed: <span id="totalCharsTyped"></span><br>
             </div>
-        </form>
 
+        </form>
     </body>
 </html>
